@@ -1,4 +1,7 @@
 # SFTP Changer
+[![codecov](https://codecov.io/gh/laetificat/sftpswitcher/branch/dev/graph/badge.svg)](https://codecov.io/gh/laetificat/sftpswitcher)
+[![tests](https://github.com/laetificat/sftpswitcher/workflows/Testing/badge.svg)](https://github.com/laetificat/sftpswitcher/actions?query=workflow%3ATesting)
+
 VSCode SFTP extension helper.
 
 Extension in question: [SFTP by liximomo](https://marketplace.visualstudio.com/items?itemName=liximomo.sftp)
