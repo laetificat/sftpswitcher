@@ -26,5 +26,8 @@ jobs:
               dep ensure
           fi
 
+      - name: Install gotest
+        run: go get -u github.com/rakyll/gotest
+
       - name: Test
-        run: gotest ./...
+        run: gotest -v ./...
