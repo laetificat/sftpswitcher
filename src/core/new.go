@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"os"
 	"path/filepath"
 
 	"github.com/laetificat/sftpchanger/src/config"
@@ -28,8 +27,7 @@ type sftpConfig struct {
 CreateConfig creates a new config with the given name, if the name is empty it will
 try to guess the name by using the current directory.
 */
-// TODO: Allow to pass reader so testing will be easier
-func CreateConfig(configName string) (string, error) {
+func CreateConfig(reader *bufio.Reader, configName string) (string, error) {
 	var err error
 	if len(configName) == 0 {
 		configName, err = guessProjectName()
@@ -38,7 +36,6 @@ func CreateConfig(configName string) (string, error) {
 		return configName, err
 	}
 
-	reader := bufio.NewReader(os.Stdin)
 	answers, err := AskUserForInfo(reader, []string{"name", "host", "username", "password", "remote path"})
 	if err != nil {
 		return configName, err
